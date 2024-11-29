@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,8 +8,12 @@ namespace SGGames.Scripts.Healths
     {
         [SerializeField] protected float m_maxHealth;
         [SerializeField] protected float m_curHealth;
+        [SerializeField] protected float m_delayBeforeDeath;
+        [SerializeField] protected Animator m_animator;
         
         protected bool m_isInvincible;
+        
+        public Action OnDeath;
 
         protected virtual void Start()
         {
@@ -35,7 +40,14 @@ namespace SGGames.Scripts.Healths
 
         protected virtual void Kill()
         {
+            OnDeath?.Invoke();
+            StartCoroutine(OnDeathFlow());
+        }
+
+        protected virtual IEnumerator OnDeathFlow()
+        {
             m_isInvincible = true;
+            yield return new WaitForSeconds(m_delayBeforeDeath);
             this.gameObject.SetActive(false);
         }
 

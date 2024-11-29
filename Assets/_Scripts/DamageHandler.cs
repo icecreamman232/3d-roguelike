@@ -40,9 +40,10 @@ namespace SGGames.Scripts.Weapons
         
         protected virtual void HitDamageable(GameObject target)
         {
-            OnHitDamageable?.Invoke(target);
             var health = target.GetComponent<Health>();
+            if (health == null) return;
             health.TakeDamage(GetDamage(),this.gameObject,m_damageableInvicibleDuration);
+            OnHitDamageable?.Invoke(target);
         }
         
         protected virtual void HitNonDamageable(GameObject target)
