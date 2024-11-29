@@ -53,8 +53,15 @@ namespace SGGames.Scripts.Player
             
             if(keyboardInput!= Vector2.zero)
             {
-                m_direction = m_PlayerInputAction.Player.Keyboard_Move.ReadValue<Vector2>();
+                m_direction = new Vector3(keyboardInput.x, 0, keyboardInput.y);
                 m_hasKeyBoardInput = true;
+            }
+            else
+            {
+                if (m_hasKeyBoardInput)
+                {
+                    m_direction = Vector3.zero;
+                }
             }
 
             if (m_hasKeyBoardInput)
@@ -64,7 +71,7 @@ namespace SGGames.Scripts.Player
                     if (!HasObstacle())
                     {
                         transform.forward = Vector3.Slerp(transform.forward, m_direction, m_rotationSpeed * Time.deltaTime);
-                        transform.Translate(m_direction * (Time.deltaTime * m_moveSpeed));
+                        transform.Translate(Vector3.forward * (Time.deltaTime * m_moveSpeed));
                     }
                     else
                     {
@@ -104,7 +111,7 @@ namespace SGGames.Scripts.Player
 
         private void UpdateAnimator()
         {
-            m_animator.SetBool(m_runningAnimParam, m_nextTargetPos != transform.position);
+            m_animator.SetBool(m_runningAnimParam, m_direction != Vector3.zero);
         }
     }
 }
