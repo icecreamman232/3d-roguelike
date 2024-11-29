@@ -28,86 +28,125 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             ""id"": ""5f8aa6d5-1851-490e-b2bb-c66318cef6b8"",
             ""actions"": [
                 {
-                    ""name"": ""Ability_1"",
-                    ""type"": ""Button"",
-                    ""id"": ""b801431d-1290-436c-ae82-479e65e93b68"",
-                    ""expectedControlType"": """",
+                    ""name"": ""Keyboard_Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""b3a14b15-eef8-4526-9b31-0193a602ad95"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability_2"",
-                    ""type"": ""Button"",
-                    ""id"": ""679e675f-20d0-4b86-9b3a-c2fb84b47865"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability_3"",
-                    ""type"": ""Button"",
-                    ""id"": ""803e60a1-2f10-48ae-af43-319c051120ce"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ability_4"",
-                    ""type"": ""Button"",
-                    ""id"": ""383d0fc2-30dd-4f9d-9992-61a8e53a4b9c"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""c8d524e3-50c6-42c1-9dff-5f3c2f5da66d"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""name"": ""WASD"",
+                    ""id"": ""1d77689e-ef7e-4718-a2af-c6ff4236da98"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Ability_1"",
-                    ""isComposite"": false,
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""ef64f01b-f00f-4ca0-9a58-f97ec7a29a5a"",
+                    ""name"": ""up"",
+                    ""id"": ""1c44026c-5382-4805-a898-892b95fb807c"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Ability_2"",
+                    ""action"": ""Keyboard_Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""1286425c-2055-4b24-bb58-074accf61545"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""name"": ""down"",
+                    ""id"": ""f602f192-affd-40be-8705-40368daf21a9"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Ability_3"",
+                    ""action"": ""Keyboard_Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""bb8d0361-988f-4cee-bb65-415ea550beec"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""name"": ""left"",
+                    ""id"": ""4a596166-7626-4a69-a2a4-49ea794002b7"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Ability_4"",
+                    ""action"": ""Keyboard_Move"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7a04014d-e8ba-435b-8307-027b02e4c957"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""b057b5f8-f10a-47d6-8a17-31e51b333c37"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8c913baa-acb0-4fc9-9370-27673359e260"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""35e041c0-d275-4bf3-941b-a9bf8493665c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ce1b3eb6-7093-4e7d-8f86-98383ed6a627"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a40ce526-7d75-4b81-b081-a4a20043306d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Keyboard_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -116,10 +155,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Ability_1 = m_Player.FindAction("Ability_1", throwIfNotFound: true);
-        m_Player_Ability_2 = m_Player.FindAction("Ability_2", throwIfNotFound: true);
-        m_Player_Ability_3 = m_Player.FindAction("Ability_3", throwIfNotFound: true);
-        m_Player_Ability_4 = m_Player.FindAction("Ability_4", throwIfNotFound: true);
+        m_Player_Keyboard_Move = m_Player.FindAction("Keyboard_Move", throwIfNotFound: true);
     }
 
     ~@PlayerInputAction()
@@ -186,18 +222,12 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Ability_1;
-    private readonly InputAction m_Player_Ability_2;
-    private readonly InputAction m_Player_Ability_3;
-    private readonly InputAction m_Player_Ability_4;
+    private readonly InputAction m_Player_Keyboard_Move;
     public struct PlayerActions
     {
         private @PlayerInputAction m_Wrapper;
         public PlayerActions(@PlayerInputAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Ability_1 => m_Wrapper.m_Player_Ability_1;
-        public InputAction @Ability_2 => m_Wrapper.m_Player_Ability_2;
-        public InputAction @Ability_3 => m_Wrapper.m_Player_Ability_3;
-        public InputAction @Ability_4 => m_Wrapper.m_Player_Ability_4;
+        public InputAction @Keyboard_Move => m_Wrapper.m_Player_Keyboard_Move;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -207,34 +237,16 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Ability_1.started += instance.OnAbility_1;
-            @Ability_1.performed += instance.OnAbility_1;
-            @Ability_1.canceled += instance.OnAbility_1;
-            @Ability_2.started += instance.OnAbility_2;
-            @Ability_2.performed += instance.OnAbility_2;
-            @Ability_2.canceled += instance.OnAbility_2;
-            @Ability_3.started += instance.OnAbility_3;
-            @Ability_3.performed += instance.OnAbility_3;
-            @Ability_3.canceled += instance.OnAbility_3;
-            @Ability_4.started += instance.OnAbility_4;
-            @Ability_4.performed += instance.OnAbility_4;
-            @Ability_4.canceled += instance.OnAbility_4;
+            @Keyboard_Move.started += instance.OnKeyboard_Move;
+            @Keyboard_Move.performed += instance.OnKeyboard_Move;
+            @Keyboard_Move.canceled += instance.OnKeyboard_Move;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Ability_1.started -= instance.OnAbility_1;
-            @Ability_1.performed -= instance.OnAbility_1;
-            @Ability_1.canceled -= instance.OnAbility_1;
-            @Ability_2.started -= instance.OnAbility_2;
-            @Ability_2.performed -= instance.OnAbility_2;
-            @Ability_2.canceled -= instance.OnAbility_2;
-            @Ability_3.started -= instance.OnAbility_3;
-            @Ability_3.performed -= instance.OnAbility_3;
-            @Ability_3.canceled -= instance.OnAbility_3;
-            @Ability_4.started -= instance.OnAbility_4;
-            @Ability_4.performed -= instance.OnAbility_4;
-            @Ability_4.canceled -= instance.OnAbility_4;
+            @Keyboard_Move.started -= instance.OnKeyboard_Move;
+            @Keyboard_Move.performed -= instance.OnKeyboard_Move;
+            @Keyboard_Move.canceled -= instance.OnKeyboard_Move;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -254,9 +266,6 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
-        void OnAbility_1(InputAction.CallbackContext context);
-        void OnAbility_2(InputAction.CallbackContext context);
-        void OnAbility_3(InputAction.CallbackContext context);
-        void OnAbility_4(InputAction.CallbackContext context);
+        void OnKeyboard_Move(InputAction.CallbackContext context);
     }
 }
