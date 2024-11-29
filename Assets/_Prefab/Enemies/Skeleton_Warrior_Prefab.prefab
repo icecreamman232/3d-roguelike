@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6500124603878342226}
   - component: {fileID: 4890193672370290309}
   - component: {fileID: 2782919893061436170}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DamageArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_curHealth: 0
   m_delayBeforeDeath: 0.8
   m_animator: {fileID: 8098558407151208262}
+  m_cheatNoDamage: 0
 --- !u!114 &7011247532433439306
 MonoBehaviour:
   m_ObjectHideFlags: 0

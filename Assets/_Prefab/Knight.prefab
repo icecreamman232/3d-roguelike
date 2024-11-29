@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxHealth: 100
   m_curHealth: 0
+  m_delayBeforeDeath: 0
+  m_animator: {fileID: 0}
 --- !u!114 &4566527298900448417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,8 +135,12 @@ MonoBehaviour:
   m_canShoot: 0
   m_bulletPooler: {fileID: 1879426804973635602}
   m_numBulletPerShot: 1
-  m_delayBetween2Shots: 2
+  m_delayBetween2Shots: 1
   m_bulletOffsetPosition: {x: 0, y: 1, z: 0}
+  m_attackRange: 20
+  m_targetMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1879426804973635602
 MonoBehaviour:
   m_ObjectHideFlags: 0

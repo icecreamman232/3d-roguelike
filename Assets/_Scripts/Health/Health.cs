@@ -10,6 +10,7 @@ namespace SGGames.Scripts.Healths
         [SerializeField] protected float m_curHealth;
         [SerializeField] protected float m_delayBeforeDeath;
         [SerializeField] protected Animator m_animator;
+        [SerializeField] protected bool m_cheatNoDamage;
         
         protected bool m_isInvincible;
         
@@ -23,7 +24,8 @@ namespace SGGames.Scripts.Healths
         public virtual void TakeDamage(float damage, GameObject source, float invincibilityDuration)
         {
             if (m_isInvincible) return;
-            
+
+            if (m_cheatNoDamage) return;
             m_curHealth -= damage;
 
             Debug.Log($"<color=orange>{this.gameObject.name} took {damage} from {source.name}</color>");
