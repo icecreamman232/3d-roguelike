@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace SGGames.Scripts.Weapons
@@ -16,6 +15,7 @@ namespace SGGames.Scripts.Weapons
         private void Awake()
         {
             m_damageHandler.OnHitDamageable += OnHitDamageable;
+            m_damageHandler.OnHitNonDamageable += OnHitNonDamageable;
         }
 
         public virtual void SpawnBullet(Vector3 direction, Vector3 position, Quaternion rotation)
@@ -44,6 +44,11 @@ namespace SGGames.Scripts.Weapons
         {
             DestroyBullet();
         }
+        
+        protected virtual void OnHitNonDamageable(GameObject nonDamageable)
+        {
+            DestroyBullet();
+        }
 
         protected virtual void DestroyBullet()
         {
@@ -54,6 +59,7 @@ namespace SGGames.Scripts.Weapons
         protected virtual void OnDestroy()
         {
             m_damageHandler.OnHitDamageable -= OnHitDamageable;
+            m_damageHandler.OnHitNonDamageable -= OnHitNonDamageable;
         }
     }
 }

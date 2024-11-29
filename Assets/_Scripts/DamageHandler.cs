@@ -1,4 +1,5 @@
 using System;
+using SGGames.Scripts.Healths;
 using SGGames.Scripts.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,7 +10,11 @@ namespace SGGames.Scripts.Weapons
     {
         [SerializeField] protected float m_minDamage;
         [SerializeField] protected float m_maxDamage;
+        [Header("Damageable Settings")]
+        [SerializeField] protected float m_damageableInvicibleDuration;
         [SerializeField] protected LayerMask m_damageableMask;
+        [Header("Non-Damageable Settings")]
+        [SerializeField] protected float m_nonDamageableInvicibleDuration;
         [SerializeField] protected LayerMask m_nondamageableMask;
 
         public Action<GameObject> OnHitDamageable;
@@ -18,7 +23,7 @@ namespace SGGames.Scripts.Weapons
         
         protected virtual float GetDamage()
         {
-            return Random.Range(m_minDamage, m_maxDamage);
+            return Mathf.Round(Random.Range(m_minDamage, m_maxDamage));
         }
 
         private void OnTriggerEnter(Collider other)
@@ -36,13 +41,13 @@ namespace SGGames.Scripts.Weapons
         protected virtual void HitDamageable(GameObject target)
         {
             OnHitDamageable?.Invoke(target);
-            Debug.Log("<color=orange>Hit Damageable</color>");
+            var health = target.GetComponent<Health>();
+            health.TakeDamage(GetDamage(),this.gameObject,m_damageableInvicibleDuration);
         }
         
         protected virtual void HitNonDamageable(GameObject target)
         {
             OnHitNonDamageable?.Invoke(target);
-            Debug.Log("<color=orange>Hit NonDamageable</color>");
         }
     }
 }
