@@ -102,6 +102,7 @@ MonoBehaviour:
   m_curHealth: 0
   m_delayBeforeDeath: 0
   m_animator: {fileID: 0}
+  m_cheatNoDamage: 0
 --- !u!114 &4566527298900448417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_canShoot: 0
   m_bulletPooler: {fileID: 1879426804973635602}
   m_numBulletPerShot: 1
-  m_delayBetween2Shots: 1
+  m_delayBetween2Shots: 1.5
   m_bulletOffsetPosition: {x: 0, y: 1, z: 0}
   m_attackRange: 20
   m_targetMask:

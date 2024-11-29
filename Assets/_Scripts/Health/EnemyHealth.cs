@@ -6,6 +6,12 @@ namespace SGGames.Scripts.Healths
     public class EnemyHealth : Health
     {
         protected int m_deathAnimParam = Animator.StringToHash("Dead");
+
+        public virtual void Initialize(float multiplier)
+        {
+            m_maxHealth *= multiplier;
+            m_curHealth = m_maxHealth;
+        }
         
         protected override IEnumerator OnDeathFlow()
         {

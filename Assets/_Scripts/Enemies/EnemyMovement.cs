@@ -14,11 +14,17 @@ namespace SGGames.Scripts.Enemies
 
         protected EnemyHealth m_health;
         protected int m_runningAnimParam = Animator.StringToHash("Running");
-
+        
         protected virtual void Start()
         {
             m_health = GetComponent<EnemyHealth>();
             m_health.OnDeath += OnEnemyDeath;
+        }
+
+        public virtual void Initialize(Transform target)
+        {
+            m_target = target;
+            m_canMove = true;
         }
         
         protected virtual void OnEnemyDeath()
