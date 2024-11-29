@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 namespace SGGames.Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
@@ -41,19 +42,24 @@ namespace SGGames.Scripts.Player
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
                 var pos = GetMouseWorldPosition();
                 m_nextTargetPos = new Vector3(pos.x, transform.position.y, pos.z);
                 m_direction = (m_nextTargetPos - transform.position).normalized;
                 m_hasKeyBoardInput = false;
             }
+            else if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
+            {
+                m_direction = Vector3.zero;
+                m_nextTargetPos = transform.position;
+            }
             
             var keyboardInput = m_PlayerInputAction.Player.Keyboard_Move.ReadValue<Vector2>();
             
             if(keyboardInput!= Vector2.zero)
             {
-                m_direction = new Vector3(keyboardInput.x, 0, keyboardInput.y);
+                m_direction = Vector3.right * keyboardInput.y + Vector3.forward * -keyboardInput.x;
                 m_hasKeyBoardInput = true;
             }
             else
@@ -70,8 +76,8 @@ namespace SGGames.Scripts.Player
                 {
                     if (!HasObstacle())
                     {
-                        transform.forward = Vector3.Slerp(transform.forward, m_direction, m_rotationSpeed * Time.deltaTime);
-                        transform.Translate(Vector3.forward * (Time.deltaTime * m_moveSpeed));
+                        m_modelTransform.forward = Vector3.Slerp(m_modelTransform.forward, m_direction, m_rotationSpeed * Time.deltaTime);
+                        transform.Translate(m_direction * (Time.deltaTime * m_moveSpeed));
                     }
                     else
                     {
@@ -86,7 +92,7 @@ namespace SGGames.Scripts.Player
                 {
                     if (!HasObstacle())
                     {
-                        transform.forward = Vector3.Slerp(transform.forward, m_direction, m_rotationSpeed * Time.deltaTime);
+                        m_modelTransform.forward = Vector3.Slerp(m_modelTransform.forward, m_direction, m_rotationSpeed * Time.deltaTime);
                         transform.position = Vector3.MoveTowards(transform.position, m_nextTargetPos, m_moveSpeed * Time.deltaTime);
                     }
                     else
