@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151642791454195581}
-  - component: {fileID: 4566527298900448417}
   - component: {fileID: 3089734813053919382}
   - component: {fileID: 6371297929401634899}
+  - component: {fileID: 4566527298900448417}
+  - component: {fileID: 1480504409393244127}
+  - component: {fileID: 1879426804973635602}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -35,24 +37,6 @@ Transform:
   - {fileID: 2564226904463070332}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4566527298900448417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893624530132758010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f35e26a709e1004eb308c4ea1785ab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_moveSpeed: 8
-  m_rotationSpeed: 10
-  m_modelTransform: {fileID: 2564226904463070332}
-  m_obstacleMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!65 &3089734813053919382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,6 +85,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4566527298900448417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893624530132758010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f35e26a709e1004eb308c4ea1785ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moveSpeed: 8
+  m_rotationSpeed: 10
+  m_modelTransform: {fileID: 2564226904463070332}
+  m_obstacleMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1480504409393244127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893624530132758010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2aabd104bfea34e93577c12a4a5596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_canShoot: 0
+  m_bulletPooler: {fileID: 1879426804973635602}
+  m_numBulletPerShot: 1
+  m_delayBetween2Shots: 2
+  m_bulletOffsetPosition: {x: 0, y: 1, z: 0}
+--- !u!114 &1879426804973635602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893624530132758010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87669c11170bc248af207907f8286e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Offset: {x: 0, y: 0}
+  IsSharePool: 0
+  ObjectToPool: {fileID: 2774701901145447807, guid: 6d22a8b204f951d4da2d887dc313c6d8,
+    type: 3}
+  PoolSize: 10
 --- !u!1001 &2602886752120615831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: de3b48d78f444fc4f9b5c62a6494cc0a,
         type: 3}
       propertyPath: m_Name
-      value: Knight
+      value: KnightModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
