@@ -18,7 +18,7 @@ namespace SGGames.Scripts.Healths
             m_isInvincible = true;
             m_animator.SetBool(m_deathAnimParam,true);
             yield return new WaitForSeconds(m_delayBeforeDeath);
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }

@@ -15,3 +15,4 @@ MonoBehaviour:
   m_waveNumber: 4
   m_maxNumberOfEnemies: 80
   m_healthMultiplier: 3
+  m_speedMultiplier: 1.5

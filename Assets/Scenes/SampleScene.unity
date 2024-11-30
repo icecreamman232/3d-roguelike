@@ -7156,6 +7156,7 @@ MonoBehaviour:
   m_curWaveIndex: 0
   m_delayNextSpawn: 1
   m_playerRef: {fileID: 6772844568483202237}
+  m_spawnRadius: 40
   m_waveData:
   - {fileID: 11400000, guid: ca4f6132bdeb5ae449e89997b6da7a8b, type: 2}
   - {fileID: 11400000, guid: 3b363ec4894d14141abb778f1d964c46, type: 2}

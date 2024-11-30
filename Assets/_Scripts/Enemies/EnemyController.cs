@@ -13,7 +13,7 @@ namespace SGGames.Scripts.Enemies
         public void Initialize(EnemyWaveData data, Transform player)
         {
             m_enemyHealth.Initialize(data.HealthMultiplier);
-            m_movement.Initialize(player);
+            m_movement.Initialize(player,data.SpeedMultiplier);
         }
     }
 }

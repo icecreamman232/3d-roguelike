@@ -2,6 +2,7 @@ using System;
 using SGGames.Scripts.Data;
 using SGGames.Scripts.Enemies;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SGGames.Scripts.Managers
 {
@@ -11,6 +12,7 @@ namespace SGGames.Scripts.Managers
         [SerializeField] private int m_curWaveIndex;
         [SerializeField] private float m_delayNextSpawn;
         [SerializeField] private Transform m_playerRef;
+        [SerializeField] private float m_spawnRadius;
         [SerializeField] private EnemyWaveData[] m_waveData;
         [SerializeField] private GameObject[] m_enemyPrefabs;
         
@@ -48,9 +50,15 @@ namespace SGGames.Scripts.Managers
             }
         }
 
+        private Vector3 GetSpawnPosition()
+        {
+            var randomPos = Random.insideUnitCircle * m_spawnRadius;
+            return m_playerRef.position + new Vector3(randomPos.x, 0, randomPos.y);
+        }
+
         private void SpawnEnemy()
         {
-            var enemyObject = Instantiate(m_enemyPrefabs[0],Vector3.zero,Quaternion.identity);
+            var enemyObject = Instantiate(m_enemyPrefabs[0],GetSpawnPosition(),Quaternion.identity);
             var controller = enemyObject.GetComponent<EnemyController>();
             controller.Initialize(m_waveData[m_curWaveIndex],m_playerRef);
         }

@@ -7,6 +7,7 @@ namespace SGGames.Scripts.Enemies
     {
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected float m_rotationSpeed;
+        [SerializeField] protected float m_currentSpeed;
         [SerializeField] protected bool m_canMove;
         [SerializeField] protected Transform m_target;
         [SerializeField] protected Vector3 m_direction;
@@ -21,8 +22,9 @@ namespace SGGames.Scripts.Enemies
             m_health.OnDeath += OnEnemyDeath;
         }
 
-        public virtual void Initialize(Transform target)
+        public virtual void Initialize(Transform target, float speedMultiplier)
         {
+            m_currentSpeed = speedMultiplier * speedMultiplier;
             m_target = target;
             m_canMove = true;
         }
@@ -42,7 +44,7 @@ namespace SGGames.Scripts.Enemies
             m_direction = (m_target.position - transform.position).normalized;
             
             transform.forward = Vector3.Slerp(transform.forward, m_direction, m_rotationSpeed * Time.deltaTime);
-            transform.Translate(Vector3.forward * (Time.deltaTime * m_moveSpeed));
+            transform.Translate(Vector3.forward * (Time.deltaTime * m_currentSpeed));
 
             UpdateAnimator();
         }
