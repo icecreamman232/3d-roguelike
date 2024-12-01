@@ -7220,7 +7220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06982cb40a476f542b08db2e7e72b11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_canSpawn: 0
+  m_canSpawn: 1
   m_curWaveIndex: 0
   m_delayNextSpawn: 1
   m_playerRef: {fileID: 6772844568483202237}

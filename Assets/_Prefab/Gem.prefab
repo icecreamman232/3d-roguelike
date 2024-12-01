@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_flySpeed: 20
+  m_expValue: 1
   m_pickedEvent: {fileID: 11400000, guid: a0c4391c5f94ed042894fc8a6d351e9b, type: 2}
 --- !u!54 &6318198222190407661
 Rigidbody:

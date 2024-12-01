@@ -8,6 +8,7 @@ namespace SGGames.Scripts.Pickables
     public class ExperienceShard : MonoBehaviour, Pickable
     {
         [SerializeField] private float m_flySpeed;
+        [SerializeField] private int m_expValue;
         [SerializeField] private PickablePickedEvent m_pickedEvent;
         private bool m_hasStartedPicking;
         private bool m_canFly;
@@ -29,7 +30,7 @@ namespace SGGames.Scripts.Pickables
 
         public void Picked()
         {
-            m_pickedEvent.Raise(PickableType.Experience_Shard,1);
+            m_pickedEvent.Raise(PickableType.Experience_Shard,m_expValue);
             Destroy(this.gameObject);
         }
 

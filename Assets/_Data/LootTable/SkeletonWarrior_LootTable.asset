@@ -16,4 +16,3 @@ MonoBehaviour:
   - LootPrefab: {fileID: 7791174194822014821, guid: 67dd260a03764da4bada5cbc9ac84943,
       type: 3}
     Amount: 1
-    DropChance: 100
