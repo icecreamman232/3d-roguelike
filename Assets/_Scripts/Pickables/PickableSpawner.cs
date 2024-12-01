@@ -8,11 +8,11 @@ namespace SGGames.Scripts.Pickables
 {
     public class PickableSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject m_pickablePrefab;
-        [SerializeField] private int m_spawnNumber;
         [SerializeField] private float m_spawnForce = 10;
         [SerializeField] private float m_spreadRadius = 0.5f;
         [SerializeField] private float m_spawnHeight;
+
+        [SerializeField] private LootData m_lootData;
         
         private EnemyHealth m_health;
 
@@ -25,9 +25,9 @@ namespace SGGames.Scripts.Pickables
         private void Spawn()
         {
             m_health.OnDeath -= Spawn;
-            for (int i = 0; i < m_spawnNumber; i++)
+            for (int i = 0; i < m_lootData.LootTables.Length; i++)
             {
-                var spawnObj = Instantiate(m_pickablePrefab, transform.position, Quaternion.identity);
+                var spawnObj = Instantiate(m_lootData.LootTables[i].LootPrefab, transform.position, Quaternion.identity);
                 var rigidbody = spawnObj.GetComponent<Rigidbody>();
                 var randomSpreadForce = Random.insideUnitCircle * m_spreadRadius;
                 
@@ -38,9 +38,9 @@ namespace SGGames.Scripts.Pickables
         [ContextMenu("Test Spawn")]
         private void TestSpawn()
         {
-            for (int i = 0; i < m_spawnNumber; i++)
+            for (int i = 0; i < m_lootData.LootTables.Length; i++)
             {
-                var spawnObj = Instantiate(m_pickablePrefab, transform.position, Quaternion.identity);
+                var spawnObj = Instantiate(m_lootData.LootTables[i].LootPrefab, transform.position, Quaternion.identity);
                 var rigidbody = spawnObj.GetComponent<Rigidbody>();
                 var randomSpreadForce = Random.insideUnitCircle * m_spreadRadius;
                 

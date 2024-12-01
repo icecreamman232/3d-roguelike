@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_pickablePrefab: {fileID: 7791174194822014821, guid: 67dd260a03764da4bada5cbc9ac84943,
     type: 3}
-  m_spawnNumber: 3
+  m_spawnNumber: 1
   m_spawnForce: 8
   m_spreadRadius: 0.3
   m_spawnHeight: 0.5
