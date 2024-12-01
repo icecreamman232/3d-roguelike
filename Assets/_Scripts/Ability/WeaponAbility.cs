@@ -24,8 +24,16 @@ namespace SGGames.Scripts.Abilities
             m_weaponRef = weaponObj.GetComponent<PlayerWeapon>();
         }
 
+        protected override bool CanUseAbility()
+        {
+            if (m_weaponRef == null) return false;
+            
+            return m_weaponRef.CanShoot();
+        }
+
         protected override void UseAbility()
         {
+            if (!CanUseAbility()) return;
             base.UseAbility();
             m_weaponRef.UseWeapon();
         }

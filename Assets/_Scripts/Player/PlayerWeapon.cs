@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using UnityEngine;
 
 namespace SGGames.Scripts.Weapons
@@ -23,32 +22,17 @@ namespace SGGames.Scripts.Weapons
             StartShooting();
         }
 
-        // private void Update()
-        // {
-        //     if (!m_canShoot) return;
-        //     
-        //     if (m_delayTime <= 0)
-        //     {
-        //         m_numTarget = FindTargetInRange();
-        //         if (m_numTarget >= m_numBulletPerShot)
-        //         {
-        //             Shoot(m_numTarget >= m_numBulletPerShot ? m_numBulletPerShot : m_numTarget);
-        //             m_delayTime = m_delayBetween2Shots;
-        //         }
-        //     }
-        //     else
-        //     {
-        //         m_delayTime -= Time.deltaTime;
-        //     }
-        // }
+        public bool CanShoot()
+        {
+            m_numTarget = FindTargetInRange();
+            return m_numTarget > 0;
+        }
 
         public virtual void UseWeapon()
         {
-            m_numTarget = FindTargetInRange();
-            if (m_numTarget >= m_numBulletPerShot)
-            {
-                Shoot(m_numTarget >= m_numBulletPerShot ? m_numBulletPerShot : m_numTarget);
-            }
+            if (m_numTarget <= 0) return;
+            
+            Shoot(m_numTarget >= m_numBulletPerShot ? m_numBulletPerShot : m_numTarget);
         }
 
         private void Shoot(int numShots)
@@ -69,19 +53,27 @@ namespace SGGames.Scripts.Weapons
         private int FindTargetInRange()
         {
             m_hitColliders = new Collider[m_numBulletPerShot];
-            var numTarget = Physics.OverlapSphereNonAlloc(transform.position, m_attackRange, m_hitColliders, m_targetMask);
+            var resultArray = new Collider[10];
             
-            // Sort the m_hitColliders array based on distance to the current transform position
-            Array.Sort(m_hitColliders, (collider1, collider2) =>
+            var numTarget = Physics.OverlapSphereNonAlloc(transform.position, m_attackRange, resultArray, m_targetMask);
+            
+            // Sort the result array based on distance to the current transform position
+            Array.Sort(resultArray, (collider1, collider2) =>
             {
                 if (collider1 == null || collider2 == null)
                     return 0;
 
-                float distance1 = Vector2.Distance(collider1.transform.position, transform.position);
-                float distance2 = Vector2.Distance(collider2.transform.position, transform.position);
+                float distance1 = Vector3.Distance(collider1.transform.position, transform.position);
+                float distance2 = Vector3.Distance(collider2.transform.position, transform.position);
 
                 return distance1.CompareTo(distance2);
             });
+
+            //Copy sorted result array to stored array
+            for (int i = 0; i < m_hitColliders.Length; i++)
+            {
+                m_hitColliders[i] = resultArray[i];
+            }
             
             return numTarget;
         }

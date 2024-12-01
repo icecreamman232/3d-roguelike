@@ -25,12 +25,18 @@ namespace SGGames.Scripts.Abilities
         public virtual void OnAbilityUpdate()
         {
             if (!m_isEquiped) return;
+            
             m_cooldownTimer -= Time.deltaTime;
             if (m_cooldownTimer <= 0)
             {
                 m_cooldownTimer = m_currentCooldown;
                 UseAbility();
             }
+        }
+
+        protected virtual bool CanUseAbility()
+        {
+            return false;
         }
 
         protected virtual void UseAbility()
