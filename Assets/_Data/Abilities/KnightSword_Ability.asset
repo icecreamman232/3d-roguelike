@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a114996fee685fc439c91dbfbaf18549, type: 3}
+  m_Name: KnightSword_Ability
+  m_EditorClassIdentifier: 
+  m_abilityID: 0
+  m_baseCooldown: 1.5
+  m_isEquiped: 0
+  m_weaponPrefab: {fileID: 5657627766797211164, guid: f4387b70512e38b429524cf301bd60a5,
+    type: 3}

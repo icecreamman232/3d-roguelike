@@ -22,22 +22,31 @@ namespace SGGames.Scripts.Weapons
             StartShooting();
         }
 
-        private void Update()
+        // private void Update()
+        // {
+        //     if (!m_canShoot) return;
+        //     
+        //     if (m_delayTime <= 0)
+        //     {
+        //         m_numTarget = FindTargetInRange();
+        //         if (m_numTarget >= m_numBulletPerShot)
+        //         {
+        //             Shoot(m_numTarget >= m_numBulletPerShot ? m_numBulletPerShot : m_numTarget);
+        //             m_delayTime = m_delayBetween2Shots;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         m_delayTime -= Time.deltaTime;
+        //     }
+        // }
+
+        public virtual void UseWeapon()
         {
-            if (!m_canShoot) return;
-            
-            if (m_delayTime <= 0)
+            m_numTarget = FindTargetInRange();
+            if (m_numTarget >= m_numBulletPerShot)
             {
-                m_numTarget = FindTargetInRange();
-                if (m_numTarget >= m_numBulletPerShot)
-                {
-                    Shoot(m_numTarget >= m_numBulletPerShot ? m_numBulletPerShot : m_numTarget);
-                    m_delayTime = m_delayBetween2Shots;
-                }
-            }
-            else
-            {
-                m_delayTime -= Time.deltaTime;
+                Shoot(m_numTarget >= m_numBulletPerShot ? m_numBulletPerShot : m_numTarget);
             }
         }
 

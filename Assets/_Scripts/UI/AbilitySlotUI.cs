@@ -24,7 +24,7 @@ namespace SGGames.Scripts.UI
 
         private void UpdateCooldownProgressBar(float current,float max)
         {
-            m_cooldownProgressBar.fillAmount = 1 - MathHelpers.Remap(current,0,max,0,1);
+            m_cooldownProgressBar.fillAmount = MathHelpers.Remap(current,0,max,0,1);
             m_cooldownText.text = current.ToString("0.0");
         }
     }

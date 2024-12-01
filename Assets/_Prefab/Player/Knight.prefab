@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 6371297929401634899}
   - component: {fileID: 3324430284880685734}
   - component: {fileID: 4566527298900448417}
-  - component: {fileID: 1480504409393244127}
-  - component: {fileID: 1879426804973635602}
   - component: {fileID: 6467392937160250029}
   m_Layer: 9
   m_Name: Knight
@@ -125,45 +123,6 @@ MonoBehaviour:
   m_obstacleMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1480504409393244127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893624530132758010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2aabd104bfea34e93577c12a4a5596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_canShoot: 0
-  m_bulletPooler: {fileID: 1879426804973635602}
-  m_numBulletPerShot: 1
-  m_delayBetween2Shots: 1.5
-  m_bulletOffsetPosition: {x: 0, y: 1, z: 0}
-  m_attackRange: 20
-  m_targetMask:
-    serializedVersion: 2
-    m_Bits: 128
---- !u!114 &1879426804973635602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893624530132758010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87669c11170bc248af207907f8286e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
-  Offset: {x: 0, y: 0}
-  IsSharePool: 0
-  ObjectToPool: {fileID: 2774701901145447807, guid: 6d22a8b204f951d4da2d887dc313c6d8,
-    type: 3}
-  PoolSize: 10
 --- !u!114 &6467392937160250029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +135,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd2e66ca202fab4893b16a48fb62ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_canUpdate: 0
+  m_abilityCooldownChangedEvents:
+  - {fileID: 11400000, guid: 69fdc3af0aaaafe488731c6a4c650491, type: 2}
+  - {fileID: 11400000, guid: f84b0e4de7b940746ae885149ec0528a, type: 2}
+  - {fileID: 11400000, guid: 7d5901f7f19f95d4085b0cfd4647ff26, type: 2}
+  - {fileID: 11400000, guid: a6d997bbaea6c584b9dfd55b4c1089d3, type: 2}
+  m_abilities:
+  - {fileID: 11400000, guid: 3a8c1129f3b569941abd51f5f35b8698, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4758722097100214880
 GameObject:
   m_ObjectHideFlags: 0
