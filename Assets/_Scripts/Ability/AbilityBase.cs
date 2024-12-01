@@ -43,6 +43,8 @@ namespace SGGames.Scripts.Abilities
         public virtual void CleanUp()
         {
             m_isEquiped = false;
+            m_cooldownTimer = 0;
+            m_currentCooldown = 0;
         }
     }
 

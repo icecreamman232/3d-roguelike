@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace SGGames.Scripts.Weapons
@@ -53,14 +54,6 @@ namespace SGGames.Scripts.Weapons
         private void Shoot(int numShots)
         {
             if (numShots <= 0) return;
-            //
-            // for (int i = 0; i < m_numBulletPerShot; i++)
-            // {
-            //     var bulletObject = m_bulletPooler.GetPooledGameObject();
-            //     var bullet = bulletObject.GetComponent<Bullet>();
-            //     var rotation = Quaternion.LookRotation(transform.forward);
-            //     bullet.SpawnBullet(transform.forward,transform.position + m_bulletOffsetPosition,rotation);
-            // }
 
             for (int i = 0; i < numShots; i++)
             {
@@ -77,6 +70,19 @@ namespace SGGames.Scripts.Weapons
         {
             m_hitColliders = new Collider[m_numBulletPerShot];
             var numTarget = Physics.OverlapSphereNonAlloc(transform.position, m_attackRange, m_hitColliders, m_targetMask);
+            
+            // Sort the m_hitColliders array based on distance to the current transform position
+            Array.Sort(m_hitColliders, (collider1, collider2) =>
+            {
+                if (collider1 == null || collider2 == null)
+                    return 0;
+
+                float distance1 = Vector2.Distance(collider1.transform.position, transform.position);
+                float distance2 = Vector2.Distance(collider2.transform.position, transform.position);
+
+                return distance1.CompareTo(distance2);
+            });
+            
             return numTarget;
         }
 
