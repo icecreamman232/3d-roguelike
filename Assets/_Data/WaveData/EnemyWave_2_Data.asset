@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyWave_2_Data
   m_EditorClassIdentifier: 
   m_waveNumber: 2
-  m_maxNumberOfEnemies: 30
+  m_maxNumberOfEnemies: 50
   m_healthMultiplier: 2
   m_speedMultiplier: 1
