@@ -27,8 +27,9 @@ namespace SGGames.Scripts.Healths
 
             if (m_cheatNoDamage) return;
             m_curHealth -= damage;
+            UpdateHealthBar();
 
-            Debug.Log($"<color=orange>{this.gameObject.name} took {damage} from {source.name}</color>");
+            //Debug.Log($"<color=orange>{this.gameObject.name} took {damage} from {source.name}</color>");
             
             if (m_curHealth <= 0)
             {
@@ -38,6 +39,11 @@ namespace SGGames.Scripts.Healths
             {
                 StartCoroutine(OnInvincibility(invincibilityDuration));
             }
+        }
+
+        protected virtual void UpdateHealthBar()
+        {
+            
         }
 
         protected virtual void Kill()
