@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4566527298900448417}
   - component: {fileID: 1480504409393244127}
   - component: {fileID: 1879426804973635602}
+  - component: {fileID: 6467392937160250029}
   m_Layer: 9
   m_Name: Knight
   m_TagString: Untagged
@@ -163,6 +164,18 @@ MonoBehaviour:
   ObjectToPool: {fileID: 2774701901145447807, guid: 6d22a8b204f951d4da2d887dc313c6d8,
     type: 3}
   PoolSize: 10
+--- !u!114 &6467392937160250029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893624530132758010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd2e66ca202fab4893b16a48fb62ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4758722097100214880
 GameObject:
   m_ObjectHideFlags: 0
