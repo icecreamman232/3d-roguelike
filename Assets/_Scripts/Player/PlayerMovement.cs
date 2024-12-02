@@ -29,6 +29,7 @@ namespace SGGames.Scripts.Player
             m_animator = GetComponentInChildren<Animator>();
             m_PlayerInputAction = new PlayerInputAction();
             m_PlayerInputAction.Player.Enable();
+            m_nextTargetPos = transform.position;
             m_canMove = true;
         }
 
