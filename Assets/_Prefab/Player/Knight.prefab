@@ -105,6 +105,8 @@ MonoBehaviour:
   m_cheatNoDamage: 0
   m_playerHealthChangedEvent: {fileID: 11400000, guid: ffeacdd8601ba6b4c82dde8441b52ac3,
     type: 2}
+  m_healthPickedEvent: {fileID: 11400000, guid: 1e302edb84c7a37498c27937cf65a202,
+    type: 2}
 --- !u!114 &4566527298900448417
 MonoBehaviour:
   m_ObjectHideFlags: 0

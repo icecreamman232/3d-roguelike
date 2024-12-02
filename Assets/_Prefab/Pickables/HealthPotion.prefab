@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4177759096368152106}
   - component: {fileID: 7499251582191051848}
   - component: {fileID: 7234593150795686217}
+  - component: {fileID: 8357996780234418791}
   m_Layer: 10
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -82,6 +83,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8357996780234418791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791174194822014821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a92cbafe2766ae4fa87d88c02d02e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_flySpeed: 20
+  m_pickedEvent: {fileID: 11400000, guid: 1e302edb84c7a37498c27937cf65a202, type: 2}
 --- !u!1001 &5043115834947313961
 PrefabInstance:
   m_ObjectHideFlags: 0
