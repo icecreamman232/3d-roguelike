@@ -7,6 +7,7 @@ namespace SGGames.Scripts.Pickables
     {
         Experience_Shard,
         Coin,
+        Health_Potion,
     }
     
     public interface Pickable
