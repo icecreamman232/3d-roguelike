@@ -30,6 +30,7 @@ namespace SGGames.Scripts.Healths
         private void CustomHealing(float amount)
         {
             m_curHealth = Mathf.Clamp(m_curHealth + amount, 0, m_maxHealth);
+            UpdateHealthBar();
         }
 
         protected override void UpdateHealthBar()
