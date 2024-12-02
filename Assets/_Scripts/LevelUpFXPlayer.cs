@@ -13,10 +13,12 @@ public class LevelUpFXPlayer : MonoBehaviour
     
     private void OnLevelUp(int currentLv)
     {
-        //Wont player fx on first init level
+        //Will not player fx on first init level
         if (currentLv == 1) return;
+        m_fx.gameObject.SetActive(true);
         m_fx.Play();
     }
+    
     private void OnDestroy()
     {
         m_levelUpEvent.RemoveListener(OnLevelUp);

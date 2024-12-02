@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3324430284880685734}
   - component: {fileID: 4566527298900448417}
   - component: {fileID: 6467392937160250029}
+  - component: {fileID: 3376354893312009966}
   m_Layer: 9
   m_Name: Knight
   m_TagString: Untagged
@@ -149,6 +150,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &3376354893312009966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893624530132758010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee7ed846cbd15646a9c03b214af613c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fx: {fileID: 3222614320684201143}
+  m_levelUpEvent: {fileID: 11400000, guid: d2623a0d39db4a04e9eb915b7a82a39a, type: 2}
 --- !u!1 &4758722097100214880
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 8771972552311404739, guid: bbf9e36a48d6c5648a13889afab076fd,
         type: 3}
       propertyPath: clearBehavior
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8771972552311404798, guid: bbf9e36a48d6c5648a13889afab076fd,
         type: 3}
@@ -480,14 +495,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFXR3 Hit Light B (Air)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3645648375097053027}
     - targetCorrespondingSourceObject: {fileID: 8771972552251130936, guid: bbf9e36a48d6c5648a13889afab076fd,
         type: 3}
       insertIndex: -1
@@ -499,26 +515,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6126382213325425737}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3222614320684201142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 6126382213325425737}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3645648375097053027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3222614320684201142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee7ed846cbd15646a9c03b214af613c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fx: {fileID: 3222614320684201143}
-  m_levelUpEvent: {fileID: 11400000, guid: d2623a0d39db4a04e9eb915b7a82a39a, type: 2}
 --- !u!198 &3222614320684201143 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8771972552311404798, guid: bbf9e36a48d6c5648a13889afab076fd,

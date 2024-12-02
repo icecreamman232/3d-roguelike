@@ -16,7 +16,7 @@ namespace SGGames.Scripts.UI
         [SerializeField] private PlayerExpChangedEvent m_playerExpChangedEvent;
         [SerializeField] private IntEvent m_levelChangedEvent;
 
-        private void Start()
+        private void Awake()
         {
             m_playerExpChangedEvent.AddListener(OnUpdateExpBar);
             m_levelChangedEvent.AddListener(OnLevelUp);
