@@ -90,7 +90,7 @@ MonoBehaviour:
   m_damageableInvicibleDuration: 0.3
   m_damageableMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   m_nonDamageableInvicibleDuration: 0
   m_nondamageableMask:
     serializedVersion: 2

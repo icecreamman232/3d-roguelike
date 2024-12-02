@@ -6894,9 +6894,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6800195553502455221}
-  - {fileID: 5189774564138047896}
-  - {fileID: 8081592329796624644}
   - {fileID: 8904732180411587793}
   - {fileID: 1554652673259062646}
   - {fileID: 1065922560230792040}
@@ -6906,6 +6903,9 @@ Transform:
   - {fileID: 3450173668423704967}
   - {fileID: 7229826172833248357}
   - {fileID: 1090766065291795088}
+  - {fileID: 6800195553502455221}
+  - {fileID: 5189774564138047896}
+  - {fileID: 8081592329796624644}
   m_Father: {fileID: 1557151681512613452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5014203757954296616
@@ -9242,6 +9242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4468386276234649710}
   - component: {fileID: 1151070609204285920}
+  - component: {fileID: 7486643005414715272}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -9424,6 +9425,27 @@ MonoBehaviour:
     type: 3}
   m_xSize: 12
   m_ySize: 12
+--- !u!65 &7486643005414715272
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814917851422536797}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 150, y: 1, z: 150}
+  m_Center: {x: 65, y: -0.25, z: 65}
 --- !u!1 &6957036959967005988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12464,7 +12486,7 @@ PrefabInstance:
     - target: {fileID: 4686230762495199775, guid: 175262a43cfd4994dba0839c4a4d898e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.840084
+      value: 21.840088
       objectReference: {fileID: 0}
     - target: {fileID: 4686230762495199775, guid: 175262a43cfd4994dba0839c4a4d898e,
         type: 3}

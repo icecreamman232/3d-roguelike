@@ -14,11 +14,11 @@ namespace SGGames.Scripts.Pickables
 
         [SerializeField] private LootData m_lootData;
         
-        private EnemyHealth m_health;
+        private Health m_health;
 
         private void Start()
         {
-            m_health = GetComponentInParent<EnemyHealth>();
+            m_health = GetComponentInParent<Health>();
             m_health.OnDeath += Spawn;
         }
 
