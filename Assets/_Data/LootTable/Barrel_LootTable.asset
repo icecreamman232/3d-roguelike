@@ -16,3 +16,12 @@ MonoBehaviour:
   - LootPrefab: {fileID: 7791174194822014821, guid: 278eeabc834c8ff4bbcf33582c516410,
       type: 3}
     Amount: 1
+    Weight: 5
+    LowerChance: 0
+    UpperChance: 62.5
+  - LootPrefab: {fileID: 7791174194822014821, guid: 4a8ab240c50a051409c1e6e31335856c,
+      type: 3}
+    Amount: 1
+    Weight: 3
+    LowerChance: 62.5
+    UpperChance: 100

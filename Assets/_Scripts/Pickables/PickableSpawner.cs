@@ -1,4 +1,3 @@
-using System;
 using SGGames.Scripts.Healths;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -25,14 +24,24 @@ namespace SGGames.Scripts.Pickables
         private void Spawn()
         {
             m_health.OnDeath -= Spawn;
-            for (int i = 0; i < m_lootData.LootTables.Length; i++)
+
+            var spawnPrefab = m_lootData.GetNextLoot();
+            if (spawnPrefab == null)
             {
-                var spawnObj = Instantiate(m_lootData.LootTables[i].LootPrefab, transform.position, Quaternion.identity);
-                var rigidbody = spawnObj.GetComponent<Rigidbody>();
-                var randomSpreadForce = Random.insideUnitCircle * m_spreadRadius;
-                
-                rigidbody.AddForce(new Vector3(randomSpreadForce.x,1,randomSpreadForce.y) * m_spawnForce, ForceMode.Impulse);
+                Debug.LogError($"No loot prefab found for spawning");
+                return;
             }
+            
+            var spawnObj = Instantiate(spawnPrefab, transform.position, Quaternion.identity);
+            AddForceToSpawn(spawnObj);
+        }
+
+        private void AddForceToSpawn(GameObject spawnObj)
+        {
+            var rigidbody = spawnObj.GetComponent<Rigidbody>();
+            var randomSpreadForce = Random.insideUnitCircle * m_spreadRadius;
+                
+            rigidbody.AddForce(new Vector3(randomSpreadForce.x,1,randomSpreadForce.y) * m_spawnForce, ForceMode.Impulse);
         }
 
         [ContextMenu("Test Spawn")]

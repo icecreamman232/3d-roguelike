@@ -13,12 +13,12 @@ namespace SGGames.Scripts.Managers
         [SerializeField] private PlayerExpChangedEvent m_playerExpChangedEvent;
         [SerializeField] private IntEvent m_playerLevelChangedEvent;
         [Header("Settings")]
-        
         [SerializeField] private PlayerLevelData m_playerLevelData;
         [SerializeField] private int m_expCollected;
         [SerializeField] private int m_coinCollected;
         [SerializeField] private int m_currentLevel;
         [SerializeField] private int m_maxLevel;
+
         private void Start()
         {
             m_currentLevel = 1;
