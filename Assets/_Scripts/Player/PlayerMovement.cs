@@ -16,6 +16,7 @@ namespace SGGames.Scripts.Player
         private Camera m_camera;
         private Animator m_animator;
         private bool m_hasKeyBoardInput;
+        private bool m_canMove;
         private int m_runningAnimParam = Animator.StringToHash("Running");
 
         private void Awake()
@@ -28,6 +29,7 @@ namespace SGGames.Scripts.Player
             m_animator = GetComponentInChildren<Animator>();
             m_PlayerInputAction = new PlayerInputAction();
             m_PlayerInputAction.Player.Enable();
+            m_canMove = true;
         }
 
         private Vector3 GetMouseWorldPosition()
@@ -42,6 +44,7 @@ namespace SGGames.Scripts.Player
 
         private void Update()
         {
+            if (!m_canMove) return;
             if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
                 var pos = GetMouseWorldPosition();

@@ -6,6 +6,7 @@ public class MeshCombine : MonoBehaviour
     [SerializeField] private MeshFilter[] m_meshToCombines;
     [SerializeField] private MeshFilter m_combinedMeshFilter;
 
+    #if UNITY_EDITOR
     [ContextMenu("Combine Meshes")]
     private void CombineMeshes()
     {
@@ -38,4 +39,5 @@ public class MeshCombine : MonoBehaviour
         AssetDatabase.CreateAsset(meshToSave, path);
         AssetDatabase.SaveAssets();
     }
+    #endif
 }

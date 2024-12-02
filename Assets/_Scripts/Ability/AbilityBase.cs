@@ -2,13 +2,20 @@ using UnityEngine;
 
 namespace SGGames.Scripts.Abilities
 {
+    public enum AbilityState
+    {
+        DISABLED,
+        READY,
+        USE,
+        COOLDOWN,
+    }
     public class AbilityBase : ScriptableObject
     {
         [Header("Base Settings")] 
         [SerializeField] protected AbilityID m_abilityID;
+        [SerializeField] protected AbilityState m_abilityState = AbilityState.DISABLED;
         [SerializeField] protected float m_baseCooldown;
-        [SerializeField] protected bool m_isEquiped;
-
+        
         protected float m_cooldownTimer;
         protected float m_currentCooldown;
         
@@ -17,20 +24,37 @@ namespace SGGames.Scripts.Abilities
         
         public virtual void OnEquipAbility()
         {
-            m_isEquiped = true;
+            m_abilityState = AbilityState.READY;
             m_currentCooldown = m_baseCooldown;
-            m_cooldownTimer = m_currentCooldown;
+            m_cooldownTimer = 0;
         }
 
         public virtual void OnAbilityUpdate()
         {
-            if (!m_isEquiped) return;
-            
-            m_cooldownTimer -= Time.deltaTime;
-            if (m_cooldownTimer <= 0)
+            if (m_abilityState == AbilityState.DISABLED) return;
+
+            switch (m_abilityState)
             {
-                m_cooldownTimer = m_currentCooldown;
-                UseAbility();
+                case AbilityState.DISABLED:
+                    break;
+                case AbilityState.READY:
+                    if (CanUseAbility())
+                    {
+                        m_abilityState = AbilityState.USE;
+                    }
+                    break;
+                case AbilityState.USE:
+                    m_cooldownTimer = m_currentCooldown;
+                    UseAbility();
+                    m_abilityState = AbilityState.COOLDOWN;
+                    break;
+                case AbilityState.COOLDOWN:
+                    m_cooldownTimer -= Time.deltaTime;
+                    if (m_cooldownTimer <= 0)
+                    {
+                        m_abilityState = AbilityState.READY;
+                    }
+                    break;
             }
         }
 
@@ -48,7 +72,7 @@ namespace SGGames.Scripts.Abilities
 
         public virtual void CleanUp()
         {
-            m_isEquiped = false;
+            m_abilityState = AbilityState.DISABLED;
             m_cooldownTimer = 0;
             m_currentCooldown = 0;
         }

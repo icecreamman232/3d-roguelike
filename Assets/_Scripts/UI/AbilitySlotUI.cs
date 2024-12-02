@@ -1,6 +1,7 @@
 using JustGame.Scripts.ScriptableEvent;
 using SGGames.Scripts.Managers;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +26,7 @@ namespace SGGames.Scripts.UI
         private void UpdateCooldownProgressBar(float current,float max)
         {
             m_cooldownProgressBar.fillAmount = MathHelpers.Remap(current,0,max,0,1);
-            m_cooldownText.text = current.ToString("0.0");
+            m_cooldownText.text = current > 0.0 ? current.ToString("0.0") : "";
         }
     }
 }

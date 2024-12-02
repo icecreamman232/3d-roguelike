@@ -23,7 +23,6 @@ namespace SGGames.Scripts.Abilities
             var weaponObj = Instantiate(m_weaponPrefab,m_attachment);
             m_weaponRef = weaponObj.GetComponent<PlayerWeapon>();
         }
-
         protected override bool CanUseAbility()
         {
             if (m_weaponRef == null) return false;
@@ -33,7 +32,6 @@ namespace SGGames.Scripts.Abilities
 
         protected override void UseAbility()
         {
-            if (!CanUseAbility()) return;
             base.UseAbility();
             m_weaponRef.UseWeapon();
         }
