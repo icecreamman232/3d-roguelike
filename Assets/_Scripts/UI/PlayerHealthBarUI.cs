@@ -12,7 +12,7 @@ namespace SGGames.Scripts.UI
         [SerializeField] private Image m_healthBar;
         [SerializeField] private TextMeshProUGUI m_healthText;
 
-        private void Start()
+        private void Awake()
         {
             m_playerHealthChangedEvent.AddListener(OnPlayerHealthChanged);
         }
