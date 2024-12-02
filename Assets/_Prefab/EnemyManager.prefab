@@ -44,11 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06982cb40a476f542b08db2e7e72b11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_canSpawn: 0
+  m_canSpawn: 1
   m_curWaveIndex: 0
   m_delayNextSpawn: 1
   m_playerRef: {fileID: 0}
-  m_spawnRadius: 40
+  m_spawnRadiusAroundPlayer: 40
+  m_spawnSafeBox:
+    Left: -72
+    Right: 61
+    Up: 61
+    Down: -72
   m_waveData:
   - {fileID: 11400000, guid: ca4f6132bdeb5ae449e89997b6da7a8b, type: 2}
   - {fileID: 11400000, guid: 3b363ec4894d14141abb778f1d964c46, type: 2}

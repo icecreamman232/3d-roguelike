@@ -6,13 +6,22 @@ using Random = UnityEngine.Random;
 
 namespace SGGames.Scripts.Managers
 {
+    [Serializable]
+    public struct WorldLimit
+    {
+        public float Left;
+        public float Right;
+        public float Up;
+        public float Down;
+    }
     public class EnemyManager : MonoBehaviour
     {
         [SerializeField] private bool m_canSpawn;
         [SerializeField] private int m_curWaveIndex;
         [SerializeField] private float m_delayNextSpawn;
         [SerializeField] private Transform m_playerRef;
-        [SerializeField] private float m_spawnRadius;
+        [SerializeField] private float m_spawnRadiusAroundPlayer;
+        [SerializeField] private WorldLimit m_spawnSafeBox;
         [SerializeField] private EnemyWaveData[] m_waveData;
         [SerializeField] private GameObject[] m_enemyPrefabs;
         
@@ -52,8 +61,12 @@ namespace SGGames.Scripts.Managers
 
         private Vector3 GetSpawnPosition()
         {
-            var randomPos = Random.insideUnitCircle * m_spawnRadius;
-            return m_playerRef.position + new Vector3(randomPos.x, 0, randomPos.y);
+            var randomPos = Random.insideUnitCircle * m_spawnRadiusAroundPlayer;
+            var expectSpawnPos = m_playerRef.position + new Vector3(randomPos.x, 0, randomPos.y);
+            expectSpawnPos.x = Mathf.Clamp(expectSpawnPos.x,m_spawnSafeBox.Left, m_spawnSafeBox.Right);
+            expectSpawnPos.z = Mathf.Clamp(expectSpawnPos.z,m_spawnSafeBox.Up, m_spawnSafeBox.Down);
+            
+            return expectSpawnPos;
         }
 
         private void SpawnEnemy()
